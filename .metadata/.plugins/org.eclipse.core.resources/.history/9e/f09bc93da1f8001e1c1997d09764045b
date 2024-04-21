@@ -1,0 +1,10 @@
+package com.myweb.user.model;
+
+public class UsersDAO {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

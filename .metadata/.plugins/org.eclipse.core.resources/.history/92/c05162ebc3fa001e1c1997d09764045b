@@ -1,0 +1,22 @@
+<%@page import="com.myweb.user.model.UsersVO"%>
+<%@page import="com.myweb.user.model.UsersDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+	
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	String name = request.getParameter("name");
+	String email = request.getParameter("email");
+	String address = request.getParameter("address");
+	
+	// DAO 객체 생성
+	UsersDAO dao = UsersDAO.getInstance();
+	
+	// VO 객체 생성
+	UsersVO vo = new UsersVO(id, pw, name, email, address, null);
+	
+	// 회원 가입 전에 아이디가 존재하는 아이디인지 검사
+	int result = dao.IdConfirm(id);
+%>

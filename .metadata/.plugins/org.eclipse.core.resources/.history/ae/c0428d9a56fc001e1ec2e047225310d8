@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+	
+	String name = request.getParameter("name");
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+
+%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>el_param_ok.jsp</title>
+	</head>
+	<body>
+		<%--
+			EL의 내장객체
+			1. pageScope
+			2. requestScope
+			3. sessionScope
+			4. applicationScope
+			5. param
+			6. paramValues
+			7. initParam
+			8. cookie
+		 --%>
+		이름 : <%=name %>${name }<br>
+		아이디 : ${id }<br>
+		비밀번호 : ${pw }<br>
+	</body>
+</html>
